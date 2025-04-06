@@ -18,4 +18,6 @@ student_data = pd.read_csv('data/students_performance.csv', sep=',')
 #Каков процент студентов, родители которых имеют высшее образование уровня бакалавриата (bachelor's degree)?
 #display(student_data['parental level of education'].value_counts(normalize=True))
 #Насколько медианный балл по письму у студентов в расовой группе А отличается от среднего балла по письму у студентов в расовой группе C?
-display(student_data['race/ethnicity'] == 'group A')
+#GA_WS = student_data[student_data['race/ethnicity'] == 'group A']['writing score'].median()
+#GC_WS = student_data[student_data['race/ethnicity'] == 'group C']['writing score'].mean()
+#print(GA_WS - GC_WS)
