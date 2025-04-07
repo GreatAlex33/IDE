@@ -13579,4 +13579,4 @@ index,Suburb,Address,Rooms,Type,Price,Method,SellerG,Date,Distance,Postcode,Bedr
 13577,Williamstown,83 Power St,3,h,1170000.0,S,Raine,26/08/2017,6.8,3016,3.0,2.0,4.0,436.0,126.0,1997.0,,-37.852740000000004,144.88738,Western Metropolitan,6380.0,"-37.85274, 144.88738"
 13578,Williamstown,96 Verdon St,4,h,2500000.0,PI,Sweeney,26/08/2017,6.8,3016,4.0,1.0,5.0,866.0,157.0,1920.0,,-37.85908,144.89299,Western Metropolitan,6380.0,"-37.85908, 144.89299"
 13579,Yarraville,6 Agnes St,4,h,1285000.0,SP,Village,26/08/2017,6.3,3013,4.0,1.0,1.0,362.0,112.0,1920.0,,-37.81188,144.88449,Western Metropolitan,6543.0,"-37.81188, 144.88449"
-display(melb_data[15])
+
