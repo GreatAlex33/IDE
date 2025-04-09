@@ -87,9 +87,32 @@ new_col = melb_df['WeekdaySale'].apply(get_weekend)
 melb_df['Weekend'] = new_col
 melb_df[melb_df['Weekend'] == 1]['Price'].mean()
 
-melb_df = melb_df.drop(13580, axis=0)
+#melb_df = melb_df.drop(13580, axis=0)
 
 popular_company = melb_df['SellerG'].value_counts().nlargest(49).index
 melb_df['SellerG'] = melb_df['SellerG'].apply(lambda x: x if x in popular_company else 'other')
 difference1 = (melb_df[melb_df['SellerG'] == 'Nelson']['Price'].min()) 
 difference2 = (melb_df[melb_df['SellerG'] == 'other']['Price'].min())
+
+
+cols_to_exclude = ['Date', 'Rooms', 'Bedroom', 'Bathroom', 'Car'] # список столбцов, которые мы не берём во внимание
+max_unique_count = 150 # задаём максимальное число уникальных категорий
+for col in melb_df.columns: # цикл по именам столбцов
+    if melb_df[col].nunique() < max_unique_count and col not in cols_to_exclude: # проверяем условие
+        melb_df[col] = melb_df[col].astype('category') # преобразуем тип столбца
+#melb_df.info()
+
+melb_df['Regionname'].cat.categories
+
+melb_df['Type'] = melb_df['Type'].cat.rename_categories({
+    'u': 'unit',
+    't': 'townhouse',
+    'h': 'house'
+})
+melb_df['Type']
+
+display(melb_df.info())
+popular_sub = melb_df['Suburb'].value_counts().nlargest(119).index
+melb_df['Suburb'] = melb_df['Suburb'].apply(lambda x: x if x in popular_sub else 'other')
+melb_df['Suburb'].astype('category')
+display(melb_df.info())
