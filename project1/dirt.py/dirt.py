@@ -1,5 +1,6 @@
 import numpy as np
-arr = np.linspace(-6, 21, num=60,endpoint=False, retstep=True)
-print(arr)
-
+from xml.etree.ElementInclude import include
+from IPython.display import display
+import pandas as pd
+from regex import D
 
