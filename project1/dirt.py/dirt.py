@@ -11,3 +11,10 @@ melb_data[mask1 & mask2].sort_values(
     ascending=[True, False],
     ignore_index=True)
 display(melb_data.loc[18])
+
+def tomanywords(tyi):
+    if (5 < tyi <= 9):
+        return tyi
+melb_data['TargetMouth'] = melb_data['Date'].apply(tomanywords)
+mask1 = melb_data['Date'] == melb_data['TargetMouth']
+display(melb_data[mask1].groupby('SellerG')['Price'].sum().sort_values(ascending=True))
