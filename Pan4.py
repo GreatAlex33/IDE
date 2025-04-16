@@ -31,4 +31,22 @@ melb_data['Date'] = pd.to_datetime(melb_data['Date'])
 date1 = pd.to_datetime('2017-05-01')
 date2 = pd.to_datetime('2017-09-01')
 mask = (date1 <= melb_data['Date']) & (melb_data['Date']<= date2)
-display(melb_data[mask].groupby('SellerG')['Price'].sum().sort_values(ascending=True))
+melb_data[mask].groupby('SellerG')['Price'].sum().sort_values(ascending=True)
+
+melb_data.groupby(['Rooms', 'Type'])['Price'].mean()
+melb_data.groupby(['Rooms', 'Type'])['Price'].mean().unstack()
+melb_data.pivot_table(
+    values='Price',
+    index='Rooms',
+    columns='Type',
+    fill_value=0
+).round()
+
+melb_data.pivot_table(
+    values='Price',
+    index='SellerG',
+    columns='Type',
+    aggfunc=['median'],
+    fill_value=0
+).max()
+
