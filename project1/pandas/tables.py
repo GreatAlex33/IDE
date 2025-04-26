@@ -26,4 +26,12 @@ covid_data['daily_deaths'] = covid_data.groupby('country')['deaths'].diff()
 covid_data['daily_recovered'] = covid_data.groupby('country')['recovered'].diff()
 
 vaccinations_data['date'] = pd.to_datetime(vaccinations_data['date'])
-display(vaccinations_data['date'].min())
+covid_df = covid_data.merge(vaccinations_data,
+                            on=['date','country'],
+                            how='left'
+                            )
+
+covid_df['death_rate'] = covid_df['deaths'] / covid_df['confirmed'] * 100
+covid_df['recover_rate'] = covid_df['recovered'] / covid_df['confirmed'] * 100
+round(covid_df[covid_df['country'] == 'Russia']['recover_rate'].mean(),2)
+
