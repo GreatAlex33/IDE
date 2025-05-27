@@ -19,6 +19,7 @@ data = data.drop(['birth year'], axis=1)
 #data['weekend'].value_counts()
 
 data['time_of_day'] = pd.to_datetime(data['starttime']).dt.hour
+
 def get_time_of_day(tame):
     if (6 >= tame and tame >= 0):
         return 'night'
