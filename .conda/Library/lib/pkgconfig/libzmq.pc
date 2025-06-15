@@ -1,0 +1,12 @@
+prefix=d:/IDE/.conda/Library
+exec_prefix=d:/IDE/.conda/Library
+libdir=d:/IDE/.conda/Library/lib
+includedir=d:/IDE/.conda/Library/include
+
+Name: libzmq
+Description: 0MQ c++ library
+Version: 4.3.5
+Libs: -L${libdir} -lzmq
+Libs.private: 
+Requires.private: 
+Cflags: -I${includedir} 

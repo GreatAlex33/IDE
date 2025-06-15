@@ -2,7 +2,7 @@ from re import X
 from xml.etree.ElementInclude import include
 from IPython.display import display
 import pandas as pd
-from regex import D
+
 
 melb_data = pd.read_csv('data/melb_data_fe.csv', sep=',')
 
