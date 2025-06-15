@@ -2,4 +2,5 @@ HH_data_HomeWork.ipynb filter=lfs diff=lfs merge=lfs -text
 ipynb.psd filter=lfs diff=lfs merge=lfs -text
 .ipynb.psd filter=lfs diff=lfs merge=lfs -text
 csv.psd filter=lfs diff=lfs merge=lfs -text
+*csv.psd filter=lfs diff=lfs merge=lfs -text
 dst-3.0_16_1_hh_database.csv filter=lfs diff=lfs merge=lfs -text
