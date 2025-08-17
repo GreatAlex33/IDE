@@ -1,6 +1,0 @@
-{
-    "python.analysis.autoImportCompletions": true,
-    "notebook.output.textLineLimit": 500,
-    "notebook.output.wordWrap": true,
-    "notebook.output.scrolling": true
-}
